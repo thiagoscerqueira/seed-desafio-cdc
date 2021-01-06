@@ -1,7 +1,5 @@
 package br.com.jornadadev.casadocodigo.compra;
 
-import org.hibernate.validator.internal.constraintvalidators.hv.br.CNPJValidator;
-import org.hibernate.validator.internal.constraintvalidators.hv.br.CPFValidator;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
@@ -20,7 +18,7 @@ public class CpfCnpjValidator implements Validator {
 
         NovaCompraRequest novaCompraRequest = (NovaCompraRequest) target;
 
-        if (!novaCompraRequest.documentoValido()){
+        if (!novaCompraRequest.documentoValido()) {
             errors.rejectValue("documento", null, "Documento inválido");
         }
     }
